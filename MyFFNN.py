@@ -131,7 +131,7 @@ if __name__ == "__main__":
     
 
 
-# In[12]:
+# In[12]: NN Model
 
 
 
@@ -218,11 +218,6 @@ batch_size = 100
 n_iters = 300
 num_epochs = n_iters / (len(train_loader) / batch_size)
 num_epochs = int(num_epochs)
-
-
-# In[ ]:
-
-
 
 
 
