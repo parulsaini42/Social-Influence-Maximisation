@@ -33,7 +33,7 @@ def initialize(args):
     else:
         #problem
         csv_path= json2vec(args,G)
-    vec=pd.read_csv(csv_path, engine='python')
+    vec=pd.read_csv(csv_path)
     dataset = CustomDataset(args,G,vec)
     Dataloader(dataset,G)
     
