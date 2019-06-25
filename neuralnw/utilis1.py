@@ -33,3 +33,14 @@ def json_read(path):
           data=myfile.read()
     obj = json.loads(data)
     return obj
+
+def json_dumper(data, path):
+    """
+    Function to save a JSON to disk.
+    :param data: Dictionary of seed set and corresponding activations.
+    :param path: Path for dumping the JSON.
+    """
+    with open(path, 'a') as outfile:
+        json.dump(data, outfile)
+        outfile.write(',')
+        outfile.write('\n')
