@@ -1,9 +1,21 @@
+from utilis1 import json_dumper
 import torch
 import torchvision
 import torch.nn as nn
 from torch.autograd import Variable
 from sklearn.metrics import f1_score
 from sklearn.metrics import roc_auc_score
+
+
+def nn_result(epoch,loss,f1,roc,acc,args):
+
+	data = dict()
+	data["epoch"] = epoch
+	data["loss"] = loss
+	data["accuracy"] = acc
+	data["F1-score"] = f1
+	data["ROC AUC score"] = roc
+	json_dumper(data,args.result)
 
 def standardize(predictions):
 	max_v = predictions.max()
@@ -20,9 +32,9 @@ def roc_auc(y_preds, y_targets):
 	y_pred = y_preds.detach().numpy()
 	return roc_auc_score(y_true, y_pred,average='micro')
 
-def neuralnw(G,train_loader,val_loader):
+def neuralnw(G,train_loader,val_loader,args):
 	n_in =len(G.nodes())
-	n_h = 100
+	n_h = args.hidden
 	n_out = len(G.nodes())
 	model = nn.Sequential(nn.Linear(n_in, n_h),
     nn.ReLU(),
@@ -30,18 +42,13 @@ def neuralnw(G,train_loader,val_loader):
     nn.Sigmoid())
 	#Construct the loss function
 	criterion = torch.nn.MSELoss()
-	#criterion.float()
-	# Construct the optimizer (Stochastic Gradient Descent in this case)
-	optimizer = torch.optim.Adam(model.parameters(), lr = 0.001)
+	# Construct the optimizer 
+	optimizer = torch.optim.Adam(model.parameters(), args.lr)
 
-	# 80 iterations for a train set with 8000 samples and a bactch size of 100 and 3 epochs
-	batch_size = 100
-	n_iters = 240
-	#num_epochs = n_iters / (len(train_loader) / batch_size)
-	#num_epochs = int(num_epochs)
-	num_epochs=10
+	
+	batch_size = args.batch
+	num_epochs=args.epoch
 	# Gradient Descent
-	iter=0
 	for epoch in range(num_epochs):
 	    model.train()
 	    for i, (in_,fin_) in enumerate(train_loader):
@@ -69,12 +76,14 @@ def neuralnw(G,train_loader,val_loader):
 	    	predictions=standardize(predictions)
 	    	#use probalistic predictions for roc score
 	    	roc += roc_auc(predictions,fin_)
-	    	threshold = Variable(torch.Tensor([0.5]))
+	    	threshold = Variable(torch.Tensor([args.threshold]))
 	    	predictions = (predictions > threshold).float() * 1
 	    	#use binary values for f1 score
 	    	f1_score += f1_(predictions,fin_)
 	    	accuracy_scores = (predictions==fin_).type(torch.FloatTensor)
 	    	acc += torch.sum(accuracy_scores)
 	    	total += fin_.size(1)*batch_size
+
+	    nn_result(epoch,loss.item(),f1_score/(i+1),roc/(i+1),100*acc.item()/total,args)
 	    print('Epoch: {}. Loss: {}. Accuracy: {}. F1 Score: {}.'.format(epoch, loss.item(),100*acc/total,f1_score/(i+1)))
 	    print('Roc score:',roc/(i+1))
