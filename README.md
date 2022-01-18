@@ -40,6 +40,6 @@ ROC AUC score variation with the number of epochs for fb_tvshow, chain, grid and
 <img width="815" alt="image" src="https://user-images.githubusercontent.com/37900145/150008216-65f9e827-268d-4c7f-8f24-f5c248f41947.png">
      
 ## Reference:
-[1] D. Kempe, J. Kleinberg ,E. Tardos in their paper “Maximizing the Spread of Influence through a Social Network” published in SIGKDD ‟03 Washington, DC, USA. 
-[2] Remco Snijders, “Analyzing Social Influence Through Social Media, A Structured Literature Review”. Published in the Proceedings of the 7th IADIS International Conference on Information Systems 2014, 28 February – 2 March, Madrid, Spain.
-[3] Jiezhong Qiu, Jian Tang, Hao Ma, Yuxiao Dong, KuansanWang, and Jie Tang. 2018. DeepInf: Social Influence Prediction with Deep Learning . In KDD ‟18: The 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, August 19–23, 2018, London, United Kingdom. ACM, New York, NY, USA, 10 pages.
+[1] D. Kempe, J. Kleinberg ,E. Tardos in their paper “Maximizing the Spread of Influence through a Social Network” published in SIGKDD ‟03 Washington, DC, USA. <br/>
+[2] Remco Snijders, “Analyzing Social Influence Through Social Media, A Structured Literature Review”. Published in the Proceedings of the 7th IADIS International Conference on Information Systems 2014, 28 February – 2 March, Madrid, Spain.<br/>
+[3] Jiezhong Qiu, Jian Tang, Hao Ma, Yuxiao Dong, KuansanWang, and Jie Tang. 2018. DeepInf: Social Influence Prediction with Deep Learning . In KDD ‟18: The 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, August 19–23, 2018, London, United Kingdom. ACM, New York, NY, USA, 10 pages.<br/>
