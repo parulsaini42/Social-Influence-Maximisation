@@ -17,11 +17,11 @@ Given an initial set of active nodes A, an active node v in step t gets a single
 • If w has multiple newly activated neighbors, their attempts are sequenced in an arbitrary order.
 
 ## Tools and Technology used:
-Deep Learning
-Python 3.6
-Scikit-learn,Numpy,Pandas
-PyTorch , Keras :We have used PyTorch for building our feed neural network model and TensorFlow for building sequence to sequence model.
-NetworkX: NetworkX library has been used to generate synthetic graphs for analysis.
+Deep Learning<br/>
+Python 3.6<br/>
+Scikit-learn,Numpy,Pandas<br/>
+PyTorch , Keras :We have used PyTorch for building our feed neural network model and TensorFlow for building sequence to sequence model.<br/>
+NetworkX: NetworkX library has been used to generate synthetic graphs for analysis.<br/>
 
 ## Dataset:
 #### Synthetic:
