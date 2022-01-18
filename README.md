@@ -9,10 +9,12 @@ Initially we have a set of active nodes A. Also b<sub>v,w</sub> is an influence 
 
 ### 2. Independent Cascade Model
 
-Given an initial set of active nodes A, an active node v in step t gets a single chance to activate its neighbor w with a success probability of p<sub>v,w</sub> . If v is successful then w gets activated in the diffusion step t+1. If unsuccessful v cannot make an attempt to activate w in the subsequent rounds which is not the case in linear threshold model. In case w has a set of activated neighbors then their attempts to activate w are sequences in an arbitrary fashion. The process continues until no more activations are possible. When node v becomes active, it is given a single chance to activate each currently inactive neighbor w • Succeeds with a probability 𝑝(𝑣,𝑤) (system parameter)
-• Independent of history
-• This probability is generally a coin flip (𝑈 [0,1])
-• If v succeeds, then w will become active in step t+1; but whether or not v succeeds, it cannot make any further attempts to activate w in subsequent rounds. • If w has multiple newly activated neighbors, their attempts are sequenced in an arbitrary order.
+Given an initial set of active nodes A, an active node v in step t gets a single chance to activate its neighbor w with a success probability of p<sub>v,w</sub> . If v is successful then w gets activated in the diffusion step t+1. If unsuccessful v cannot make an attempt to activate w in the subsequent rounds which is not the case in linear threshold model. In case w has a set of activated neighbors then their attempts to activate w are sequences in an arbitrary fashion. The process continues until no more activations are possible. When node v becomes active, it is given a single chance to activate each currently inactive neighbor w 
+• Succeeds with a probability 𝑝(𝑣,𝑤) (system parameter)
+      • Independent of history
+      • This probability is generally a coin flip (𝑈 [0,1])
+• If v succeeds, then w will become active in step t+1; but whether or not v succeeds, it cannot make any further attempts to activate w in subsequent rounds. 
+• If w has multiple newly activated neighbors, their attempts are sequenced in an arbitrary order.
 
 ## Tools and Technology used:
 Deep Learning
