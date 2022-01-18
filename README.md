@@ -34,7 +34,7 @@ NetworkX: NetworkX library has been used to generate synthetic graphs for analys
 5. Facebook TV Show 
 6. Twitter real time data (future scope)
 
-## Findings:
+## Findings for FFNN:
 ROC AUC score variation with the number of epochs for fb_tvshow, chain, grid and barabasi_albert graph can be seen below:
 
 <img width="815" alt="image" src="https://user-images.githubusercontent.com/37900145/150008216-65f9e827-268d-4c7f-8f24-f5c248f41947.png">
